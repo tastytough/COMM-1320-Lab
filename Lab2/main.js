@@ -1,11 +1,13 @@
-const getTheDayOfTheWeek = require("./lab2").getTheDayOfTheWeek;
-const isLeapYear = require("./lab2").isLeapYear;
-const makeCalendar = require("./lab2").makeCalendar;
+const getTheDayOfTheWeek = require("./lab-two").getTheDayOfTheWeek;
+const isLeapYear = require("./lab-two").isLeapYear;
+const makeCalendar = require("./lab-two").makeCalendar;
 const readline = require("readline-sync");
 
-const year = readline.question("Enter a year: ");
-const month = readline.question("Enter a month: ");
-const day = readline.question("Enter a date: ");
-getTheDayOfTheWeek(year, month, day);
+const year = parseInt(readline.question("Enter a year: "));
+const month = parseInt(readline.question("Enter a month (1 - 12): "));
+const day = parseInt(readline.question("Enter a date (1 - 31): "));
 
-//makeCalendar();
+const getDayOfTheWeekForUserDate = (`${month}-${day}-${year} is a ${getTheDayOfTheWeek(year, month, day)}`);
+console.log(getDayOfTheWeekForUserDate);
+getTheDayOfTheWeek(year, month, day);
+makeCalendar();
